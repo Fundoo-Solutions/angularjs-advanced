@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="page-header">
+        <h1>State Custom Data</h1>
+
+        <p class="lead">CustomController Attached with $state injected</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-5">
+            <h4>$state.current.data:</h4>
+            <pre>{{ custom.currentData | json }}</pre>
+        </div>
+        <div class="col-lg-6 col-lg-offset-1">
+            <h4>$state:</h4>
+            <pre>{{ custom.state | json }}</pre>
+        </div>
+
+    </div>
+</div>

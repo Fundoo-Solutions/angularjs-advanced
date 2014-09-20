@@ -1,0 +1,25 @@
+{
+  "name": "ui-routing-demo",
+  "version": "0.0.1",
+  "description": "reference to the routing in angular keynote",
+  "keywords": [
+    "angularjs",
+    "angular",
+    "routing"
+  ],
+  "license": "MIT",
+  "homepage": "http://nir-kaufman.ghost.io/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.2.16",
+    "angular-ui-router": "~0.2.10",
+    "angular": "~1.2.16",
+    "bootstrap": "~3.1.1"
+  }
+}

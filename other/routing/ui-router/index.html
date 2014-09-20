@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="uiRouterDemoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>UI Router | Demo project</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+
+    <!-- load angular and angular ui router -->
+    <script src="angular.js"></script>
+    <script src="angular-ui-router.js"></script>
+
+    <!-- load app modules -->
+    <script src="uiRouterApp.js"></script>
+
+</head>
+<body>
+
+<!-- Site top menu navigation -->
+<nav class="navbar navbar-default">
+    <div class="container">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">UI Router Demo</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="welcome">Simple state</a></li>
+            <li><a ui-sref="params">State Parameters</a></li>
+            <li><a ui-sref="customData">State Custom Data</a></li>
+            <li><a ui-sref="nested">Nested Views</a></li>
+            <li><a ui-sref="named">Named Views</a></li>
+            <li><a ui-sref="calls">Callbacks</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Templates will be rendered here -->
+<ui-view></ui-view>
+
+
+<!-- app controllers -->
+<script src="views/params/params.js"></script>
+<script src="views/custom/custom.js"></script>
+<script src="views/nested/sub-views/admin-sections/setting.js"></script>
+<script src="views/named/named.js"></script>
+
+</body>
+</html>

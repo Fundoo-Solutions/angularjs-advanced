@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Nested states</h1>
+
+        <p class="lead">NestedController Attached with $state injected</p>
+    </div>
+
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li ui-sref-active="active"><a ui-sref="nested.user">User</a></li>
+            <li ui-sref-active="active"><a ui-sref="nested.profile">Profile</a></li>
+            <li ui-sref-active="active"><a ui-sref="nested.admin">Admin</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ui-view></ui-view>
+    </div>
+
+</div>
