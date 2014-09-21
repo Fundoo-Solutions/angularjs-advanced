@@ -8,43 +8,27 @@ angular.module('stockMarketApp').directive('simpleStockRepeat',
       '  <div class="carousel"></div> ' +
       '  <a href="" ng-click="next()" ng-show="hasNext()">Next</a> ' +
       '</div>',
-    // Capture and replace the entire element
-    // instead of just its content
-    transclude: true,
-    // A $transclude is passed in as the fifth
-    // argument to the link function
+
     link: function($scope, $element, $attrs, ctrl, $transclude) {
-      var myArray = $scope.$eval($attrs.simpleStockRepeat);
+      var myArray;
       var childScope;
       var currentIndex = 0;
       $scope.next = function() {
-        currentIndex++;
-        childScope.stock = myArray[currentIndex];
       };
       $scope.hasNext = function() {
-        return currentIndex < myArray.length - 1;
       };
       $scope.previous = function() {
-        currentIndex--;
-        childScope.stock = myArray[currentIndex];
       };
       $scope.hasPrevious = function() {
-        return currentIndex > 0;
       };
       var container = $element.find('.carousel');
 
-      var instance = $transclude($scope.$new(),
+      var instance = $transclude(scope,
           function(clonedElement, newScope) {
-        childScope = newScope;
-        childScope.stock = myArray[0];
+
       });
       // Add it to our container
       container.append(instance);
-
-      // With transclude: 'element', the element gets replaced
-      // with a comment. Add our generated content
-      // after the comment
-      $element.after(container);
     }
   };
   }]);
