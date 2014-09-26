@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Market App</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+<body ng-app="stockMarketApp">
+
+<div ng-controller="MainCtrl as mainCtrl">
+    <h3>List of Stocks</h3>
+    <div simple-stock-repeat="mainCtrl.stocks" class="view-animate-container">
+        <div class="view-animate">We found {{stock.name}}</div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.js"></script>
+<script src="app.js"></script>
+<script src="directive.js"></script>
+</body>
+</html>
