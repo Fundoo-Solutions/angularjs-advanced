@@ -1,15 +1,15 @@
-/**
- * Created by Fundoo on २६-०९-२०१४.
- */
 angular.module('stockMarketApp').directive('simpleStockRepeat',
     ['$animate', function($animate) {
         return {
             restrict: 'A',
             template: '' +
                 '<div class="container">' +
-                '  <a href="" ng-click="previous()" ng-show="hasPrevious()">Previous</a> ' +
+                '<div>'+
+                '  <a href="" ng-click="previous()" ng-show="hasPrevious()"  style="float:left;">Previous</a> ' +
+                '  <a href="" ng-click="next()" ng-show="hasNext()" style="float:right;">Next</a> ' +
+                '</div>'+
                 '  <div class="carousel"></div> ' +
-                '  <a href="" ng-click="next()" ng-show="hasNext()">Next</a> ' +
+
                 '</div>',
             // Capture and replace the entire element
             // instead of just its content
