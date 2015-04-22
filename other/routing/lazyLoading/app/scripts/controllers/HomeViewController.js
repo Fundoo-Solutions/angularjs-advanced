@@ -1,15 +1,9 @@
-define(['app'], function(app)
-{
-	app.controller('HomeViewController',
-    [
-        '$scope',
-
-        function($scope)
+define(['app'], function(app) {
+    app.controller('HomeViewController', ['$scope', function($scope) {
+        $scope.page =
         {
-            $scope.page =
-            {
-                heading: 'Welcome'
-            };
-        }
+            heading: 'Welcome'
+        };
+    }
     ]);
 });

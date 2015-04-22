@@ -1,15 +1,9 @@
-define(['app'], function(app)
-{
-    app.controller('ContactViewController',
-    [
-        '$scope',
-
-        function($scope)
+define(['app'], function(app) {
+    app.controller('ContactViewController', ['$scope', function($scope) {
+        $scope.page =
         {
-            $scope.page =
-            {
-                heading: 'Contact Us'
-            };
-        }
+            heading: 'Contact Us'
+        };
+    }
     ]);
 });
