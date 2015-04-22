@@ -1,5 +1,4 @@
-define([], function()
-{
+define([], function() {
     return {
         defaultRoutePath: '/',
         states: {

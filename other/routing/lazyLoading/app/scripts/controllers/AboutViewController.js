@@ -1,15 +1,9 @@
-define(['app'], function(app)
-{
-    app.controller('AboutViewController',
-    [
-        '$scope',
-
-        function($scope)
+define(['app'], function(app) {
+    app.controller('AboutViewController', ['$scope', function($scope) {
+        $scope.page =
         {
-            $scope.page =
-            {
-                heading: 'About Us'
-            };
-        }
+            heading: 'About Us'
+        };
+    }
     ]);
 });

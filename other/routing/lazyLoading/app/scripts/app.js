@@ -1,9 +1,8 @@
-define(['routes','services/dependencyResolverFor'], function(config, dependencyResolverFor)
-{
-    var app = angular.module('app', ['ui.router']);
+define(['routes','services/dependencyResolverFor'], function(config, dependencyResolverFor) {
+  var app = angular.module('app', ['ui.router']);
 
-    app.config(
-    [
+  app.config(
+      [
         '$stateProvider',
         '$locationProvider',
         '$controllerProvider',
@@ -11,30 +10,20 @@ define(['routes','services/dependencyResolverFor'], function(config, dependencyR
         '$filterProvider',
         '$provide',
 
-        function($stateProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide)
-        {
-	        app.controller = $controllerProvider.register;
-	        app.directive  = $compileProvider.directive;
-	        app.filter     = $filterProvider.register;
-	        app.factory    = $provide.factory;
-	        app.service    = $provide.service;
+        function($stateProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide) {
+          app.controller = $controllerProvider.register;
+          app.directive  = $compileProvider.directive;
+          app.filter     = $filterProvider.register;
+          app.factory    = $provide.factory;
+          app.service    = $provide.service;
 
-            //$locationProvider.html5Mode(true);
-
-            if(config.states !== undefined)
-            {
-                angular.forEach(config.states, function(route, state)
-                {
-                    $stateProvider.state(state, {url: route.url, templateUrl:route.templateUrl, resolve:dependencyResolverFor(route.dependencies)});
-                });
-            }
-
-            //if(config.defaultRoutePaths !== undefined)
-            //{
-            //    $routeProvider.otherwise({redirectTo:config.defaultRoutePaths});
-            //}
+          if(config.states !== undefined) {
+            angular.forEach(config.states, function(route, state) {
+              $stateProvider.state(state, {url: route.url, templateUrl:route.templateUrl, resolve:dependencyResolverFor(route.dependencies)});
+            });
+          }
         }
-    ]);
+      ]);
 
-   return app;
+  return app;
 });
