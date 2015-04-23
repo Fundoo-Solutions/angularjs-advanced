@@ -5,7 +5,7 @@ angular.module('dynamicFormApp')
       restrict: 'E',
       require: '^form',
       scope: true,
-      link: function($scope, $element, $attrs) {
+      link: function($scope, $element, $attrs, formCtrl) {
         var expectedInputAttrs = {
           'required': 'required',
           'ng-minlength': 'ngMinlength',
@@ -49,6 +49,7 @@ angular.module('dynamicFormApp')
         elementHtml += '</div>';
         $element.html(elementHtml);
 
+        // Only this belongs in link
         $scope.validators = angular.copy(presentValidationKeys);
         $scope.hasError = function(key) {
           return !!formCtrl[inputName]['$error'][key];

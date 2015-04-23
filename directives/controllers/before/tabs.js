@@ -14,15 +14,16 @@ angular.module('stockMarketApp')
         var currentIndex = 0;
         $scope.tabs = [];
         this.registerTab = function(title, scope) {
-
+          // Set selected on scope based on $scope.tabs length
+          // Push into tabs title and scope
         };
 
         $scope.selectTab = function(index) {
-
+          // Set on all tabs.scope selected based on currentIndex and index
         };
 
         $scope.isSelectedTab = function(index) {
-
+          // is it currentIndex?
         };
       }
     };
